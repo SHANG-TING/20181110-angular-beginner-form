@@ -1,7 +1,11 @@
 <h1>註冊畫面</h1>
 {{ f?.value | json }}
+<hr />
+{{ f?.form.getRawValue() | json }}
 <button (click)="f.reset({ personName: 'UMR', email: '' })">reset form</button>
-<form #f="ngForm">
+<form #f="ngForm"
+      (ngSubmit)="submitForm()"
+      novalidate>
   <div class="form-group row">
     <label for="staticEmail"
            class="col-sm-2 col-form-label">姓名</label>
@@ -9,7 +13,7 @@
       <input type="text"
              class="form-control"
              name="personName"
-             minlength="6"
+             minlength="3"
              #personName="ngModel"
              ngModel
              placeholder="姓名 (必填)"
