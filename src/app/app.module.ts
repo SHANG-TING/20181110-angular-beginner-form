@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,6 +12,7 @@ import { SingupAdvanceComponent } from './singup-advance/singup-advance.componen
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       { path: 'signup', component: SignupComponent },
       { path: 'signup-advance', component: SingupAdvanceComponent },
