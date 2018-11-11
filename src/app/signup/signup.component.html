@@ -14,6 +14,10 @@
              required>
       {{ personName.errors | json }}
       <div>invalid: {{ personName.invalid }}</div>
+      <div>dirty: {{ personName.dirty }}</div>valueChanges
+      <div>touch: {{ personName.touched }}</div>
+      <div>valueChanges: {{ personName.valueChanges | async }}</div>
+      <div>statusChanges: {{ personName.statusChanges | async }}</div>
     </div>
   </div>
   <div class="form-group row">
@@ -109,5 +113,6 @@
     </div>
   </div>
   <button type="submit"
-          class="btn btn-primary">送出</button>
+          class="btn btn-primary"
+          [disabled]="!f.valid">送出</button>
 </form>
