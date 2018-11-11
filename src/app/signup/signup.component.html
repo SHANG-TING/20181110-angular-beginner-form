@@ -19,6 +19,7 @@
       <div>touch: {{ personName.touched }}</div>
       <div>valueChanges: {{ personName.valueChanges | async }}</div>
       <div>statusChanges: {{ personName.statusChanges | async }}</div>
+      <span *ngIf="personName.hasError('required')">必須輸入姓名欄位</span>
     </div>
   </div>
   <div class="form-group row">
